@@ -5,38 +5,41 @@ import { IconSquareRoundedX } from "@tabler/icons-react";
 
 const loadingStates = [
   {
-    text: "Buying a condo",
+    text: "Starting the engine",
   },
   {
-    text: "Travelling in a flight",
+    text: "Checking the oil",
   },
   {
-    text: "Meeting Tyler Durden",
+    text: "Checking the brakes",
   },
   {
-    text: "He makes soap",
+    text: "Checking the lights",
   },
   {
-    text: "We goto a bar",
+    text: "Checking the nuclear fuel",
   },
   {
-    text: "Start a fight",
+    text: "Checking the multiverse bridge",
   },
   {
-    text: "We like it",
+    text: "Checking the flux capacitor",
   },
   {
-    text: "Welcome to F**** C***",
+    text: "Welcome to the future",
   },
 ];
 
-export function Preloader() {
-  const [loading, setLoading] = useState(false);
+export function Preloader({ isLoading }: { isLoading: boolean }) {
+  const [loading, setLoading] = useState(true);
+
   return (
     <div className="w-full h-[60vh] flex items-center justify-center">
-      {/* Core Loader Modal */}
-      <Loader loadingStates={loadingStates} loading={loading} duration={2000} />
-
+      <Loader
+        loadingStates={loadingStates}
+        loading={isLoading}
+        duration={1000}
+      />
     </div>
   );
 }
